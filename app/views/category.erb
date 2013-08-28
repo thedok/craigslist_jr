@@ -1,0 +1,7 @@
+Hello! This is the category view!
+
+
+
+       <td><% @category_names.each do |category| %></td>
+            <a href="/category/<%= category.name %>"><%= category.name %></a>
+          <% end %>
