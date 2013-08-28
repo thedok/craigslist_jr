@@ -1,4 +1,12 @@
-<div class="container">
-  <h1>Welcome to Doktor's List!</h1>
-  <p>Categories should go here</p>
 
+
+<div class='container' >
+<h1>Welcome to Doktor's List!</h1>
+	<h4>Choose from a category:</h4>
+
+<p><% @category_names.each do |category| %></p>
+
+<a href="/category/<%= category.name %>/<%= category.id %>"><%= category.name %></a>
+
+<% end %>
+</div>

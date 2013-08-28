@@ -1,7 +1,8 @@
-Hello! This is the category view!
+<div class='container' >Choose from a category:
 
+<p><% @category_names.each do |category| %></p>
 
+<a href="/category/<%= category.name %>/<%= category.id %>"><%= category.name %></a>
 
-       <td><% @category_names.each do |category| %></td>
-            <a href="/category/<%= category.name %>"><%= category.name %></a>
-          <% end %>
+<% end %>
+</div>

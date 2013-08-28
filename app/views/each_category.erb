@@ -1,0 +1,22 @@
+<div class='container' ><p>Create a post in <%= @category.name %></p>
+
+<form name="input" action="/category/Car/<%= @id %>" method="post">
+Title: <input type="text" name="title"></br>
+Content: <input type="text" name="content">
+
+<input type="submit" value="Submit">
+</form>
+
+<br>
+Postings for <%= @category.name %>
+<br>
+
+<% @posts.each do |post| %>
+<br>
+<%= post.title %>
+<br>
+<%= post.content %>
+<% end %>
+
+<br>
+</div>

@@ -1,23 +1,19 @@
 get '/' do
-  
+  @category_names = Category.all 
   erb :index
 end
 
-get '/category/' do
-  p params
-  @category_names = Category.all
-  p @category_names
-  erb :category
+get '/category/:category_name/:id' do
+ @id = params[:id]
+ @category = Category.find(params[:id])
+ @posts = @category.posts
+ erb :each_category
 end
 
-get '/create/' do
-  erb :create
-end
-
-post '/create/' do
-  p params
-  Post.create(title: params[:title], content: params[:content])
-  erb :create
+post '/category/:category_name/:id' do
+	cat = Category.find(params[:id])
+	cat.posts << Post.create(title: params[:title], content: params[:content])
+	erb :index
 end
 
 
